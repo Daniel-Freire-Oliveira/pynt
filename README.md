@@ -1,1 +1,2 @@
-#	Pytn is an aplication writen in pygame 
+#	Pytn is an aplication writen in pygame in progress
+
