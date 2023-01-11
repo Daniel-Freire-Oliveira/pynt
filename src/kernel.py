@@ -2,7 +2,6 @@ import pygame
 from utils.contents import colors
 from utils.contents import etc
 from utils.etc import gui
-from utils.etc import texture
 pygame.init()
 window = pygame.display.set_mode((600,600))
 window.fill(colors.WHITE)
@@ -12,11 +11,11 @@ mouse = []
 #image = pygame.transform.scale(image,(20,20))
 Done = False
 gui.init_gui()
-print(texture.RGB)
 def main():
     global mouse,window,image
     while etc.running:
         
+        from utils.etc import texture
         event = pygame.event.poll()
         if event.type == pygame.QUIT:
             etc.running = False

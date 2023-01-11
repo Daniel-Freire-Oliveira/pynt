@@ -1,7 +1,7 @@
 from tkinter import *
 class Gui:
-    exportColor = ()
     def __init__(self,master=None):
+        self.sucess = False
         self.titleContainer = Frame(master)
         self.titleContainer.pack()
         
@@ -32,14 +32,15 @@ class Gui:
         file = open("./utils/etc/texture.py","w")
         #file = open("./texture.py","w")
         file.write(f"RGB = {colorRgb}")
+        self.sucess = True
         #print(colorRgb)
         #from utils.etc import texture
         #colorRgb = colorRgb.split(",")
         #import texture
         #print(texture.RGB)
         #texture.RGB = tuple(colorRgb)
-
         self.title["text"]="value set now you can enjoy ._."
+
 def init_gui():
     root = Tk()
     Gui(root)
