@@ -27,13 +27,20 @@ class Gui:
 
     def validateRgb(self):
         colorRgb = self.colorInput.get()
+        colorRgb = colorRgb.split(",")
+        colorRgb = tuple(map(int,colorRgb))
+        file = open("./utils/etc/texture.py","w")
         #file = open("./texture.py","w")
-        #file.write(f"RGB = ({colorRgb})")
-        import texture as tx
-        tx.RGB = colorRgb
+        file.write(f"RGB = {colorRgb}")
+        #print(colorRgb)
+        #from utils.etc import texture
+        #colorRgb = colorRgb.split(",")
+        #import texture
+        #print(texture.RGB)
+        #texture.RGB = tuple(colorRgb)
+
         self.title["text"]="value set now you can enjoy ._."
 def init_gui():
     root = Tk()
     Gui(root)
     root.mainloop()
-init_gui()
